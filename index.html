@@ -26,7 +26,7 @@
       background-image: url('BackgroundIMG.png');
       background-size: cover;
       background-position: center;
-      z-index: -1; /* pod obsahem */
+      z-index: -1;
     }
 
     section {
@@ -43,28 +43,183 @@
       text-align: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
+
+    .btn {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 40vw;
+    }
+
+    .btn-container {
+      display: flex;
+      gap: 20px;
+      margin-top: 70vh;
+      justify-content: center;
+    }
+
+    img {
+      width: 70vw;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .btn-submit {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    /* HAMBURGER MENU */
+    #menu-toggle {
+      display: none;
+    }
+
+    .hamburger {
+      font-size: 30px;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1001;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: right 0.3s ease;
+      z-index: 1000;
+    }
+
+    .mobile-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+
+    .mobile-nav li {
+      margin: 20px 0;
+    }
+
+    .mobile-nav a {
+      text-decoration: none;
+      font-size: 22px;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+
+    .mobile-nav a:hover {
+      color: #007bff;
+    }
+
+    #menu-toggle:checked + .hamburger + .mobile-nav {
+      right: 0;
+    }
   </style>
 </head>
 <body>
 
-  <section>
-    <div class="content-box">
-      <h2>První sekce</h2>
-      <p>Obsah první sekce</p>
+  <!-- HAMBURGER MENU -->
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+  <nav class="mobile-nav">
+    <ul>
+      <li><a href="#1">Úvod</a></li>
+      <li><a href="#2">Pozvánka</a></li>
+      <li><a href="#3">O mně</a></li>
+      <li><a href="#4">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <section id="1">
+    <div class="btn-container">
+      <button class="btn">Koupit lístek</button>
+      <a href="#2"><button class="btn">Více</button></a>
     </div>
   </section>
 
-  <section>
+  <section id="2">
     <div class="content-box">
-      <h2>Druhá sekce</h2>
-      <p>Obsah druhé sekce</p>
+      <img src="./Pozvánka na koncert.png" alt="">
+      <p>Místo:</p>
+      <p>Datum:</p>
+      <p>Čas:</p>
+      <p>Cena:</p>
     </div>
   </section>
 
-  <section>
+  <section id="3">
     <div class="content-box">
-      <h2>Třetí sekce</h2>
-      <p>Obsah třetí sekce</p>
+      <img src="./ProfilImage.png" alt="">
+      <h2>Jan Konrád</h2>
+      <p>Zde je nějaký text o mně.</p>
+    </div>
+  </section>
+
+  <section id="4">
+    <div class="content-box">
+      <h2>Kontaktní formulář</h2>
+      <form action="">
+        <div class="form-group">
+          <label for="name">Jméno</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Zpráva</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Odeslat</button>
+      </form>
     </div>
   </section>
 
