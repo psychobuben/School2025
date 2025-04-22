@@ -1,59 +1,72 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jedno pozadí - responzivní</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jedno pozadí přes celou stránku</title>
   <style>
-    /* Nastavíme pozadí přes celý body */
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+      font-family: sans-serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
       background-image: url('BackgroundIMG.png');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      /* POZOR: background-attachment: fixed NEPOUŽÍVAT na mobilech */
+      z-index: -1; /* pod obsahem */
     }
 
-    /* Každá sekce přes celou výšku */
     section {
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    /* Box s obsahem */
-    div {
+    .content-box {
       background-color: rgba(255, 255, 255, 0.8);
-      padding: 20px;
-      border-radius: 10px;
+      padding: 20px 30px;
+      border-radius: 12px;
       text-align: center;
-      max-width: 80%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
 <body>
+
   <section>
-    <div>
+    <div class="content-box">
       <h2>První sekce</h2>
       <p>Obsah první sekce</p>
     </div>
   </section>
 
   <section>
-    <div>
+    <div class="content-box">
       <h2>Druhá sekce</h2>
       <p>Obsah druhé sekce</p>
     </div>
   </section>
 
   <section>
-    <div>
+    <div class="content-box">
       <h2>Třetí sekce</h2>
       <p>Obsah třetí sekce</p>
     </div>
   </section>
+
 </body>
 </html>
