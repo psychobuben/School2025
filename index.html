@@ -1,56 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Responzivní profil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jedno pozadí - responzivní</title>
   <style>
+    /* Nastavíme pozadí přes celý body */
     body {
       margin: 0;
-      width: 100vw;
-      height: 100vh;
-      
-     
-    
-  
-    }
-
-    section {
-      height: 100vh; /* Výška sekce na 100% výšky obrazovky */
-      width: 100vw; /* Šířka sekce na 100% šířky obrazovky */
-
-      justify-content: center; /* Vodorovně centrování obsahu */
-      align-items: center; /* Vertikálně centrování obsahu */
-
-      display: flex;
-      flex-direction: column; /* Zůstává sloupcový layout */
+      padding: 0;
       background-image: url('BackgroundIMG.png');
       background-size: cover;
-  background-position: center;
-
-  background-attachment: fixed; /* Fixní pozadí */
-    
+      background-position: center;
+      background-repeat: no-repeat;
+      /* POZOR: background-attachment: fixed NEPOUŽÍVAT na mobilech */
     }
 
+    /* Každá sekce přes celou výšku */
+    section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Box s obsahem */
     div {
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.8); /* Poloprůhledné pozadí pro lepší čitelnost */
-      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
       padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 80%;
     }
   </style>
 </head>
 <body>
-  <section class="1">
+  <section>
     <div>
-     <p>První sekce</p>
+      <h2>První sekce</h2>
+      <p>Obsah první sekce</p>
     </div>
   </section>
-  <section class="2">
-<div>
-    <p>Druhá sekce</p>
-</div>
+
+  <section>
+    <div>
+      <h2>Druhá sekce</h2>
+      <p>Obsah druhé sekce</p>
+    </div>
   </section>
 
+  <section>
+    <div>
+      <h2>Třetí sekce</h2>
+      <p>Obsah třetí sekce</p>
+    </div>
+  </section>
 </body>
 </html>
