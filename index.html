@@ -15,22 +15,19 @@
       height: 100%;
       font-family: sans-serif;
     }
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('BackgroundIMG.png');
 
-  background-repeat: no-repeat;
-  background-position: center center;
-
-  background-size: contain; /* <-- Zachová celý obrázek bez ořezu */
-  z-index: -1;
-}
-
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('BackgroundIMG.png');
+      background-size: cover;
+      background-position: center;
+      z-index: -1; /* pod obsahem */
+    }
 
     section {
       height: 100vh;
