@@ -14,6 +14,7 @@
       padding: 0;
       height: 100%;
       font-family: sans-serif;
+      scroll-behavior: smooth;
     }
 
     body::before {
@@ -42,16 +43,25 @@
       border-radius: 12px;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      margin: 5%;
     }
 
     .btn {
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 20px 30px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      width: 40vw;
-    }
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 300px;
+  font-size: 1rem;
+}
+
+img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
 
     .btn-container {
       display: flex;
@@ -60,9 +70,7 @@
       justify-content: center;
     }
 
-    img {
-      width: 70vw;
-    }
+  
 
     form {
       display: flex;
